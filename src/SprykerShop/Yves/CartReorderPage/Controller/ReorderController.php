@@ -19,12 +19,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ReorderController extends AbstractController
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param string $orderReference
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function reorderAction(Request $request, string $orderReference): RedirectResponse
     {
         $cartReorderForm = $this->getFactory()
@@ -50,9 +44,6 @@ class ReorderController extends AbstractController
         return $this->redirectToSuccessfulUrl();
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToFailureUrl(): RedirectResponse
     {
         return $this->redirectResponseInternal(
@@ -60,9 +51,6 @@ class ReorderController extends AbstractController
         );
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToSuccessfulUrl(): RedirectResponse
     {
         return $this->redirectResponseInternal(
@@ -70,11 +58,6 @@ class ReorderController extends AbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return void
-     */
     protected function addErrorMessagesFromForm(FormInterface $form): void
     {
         /** @var \Symfony\Component\Form\FormErrorIterator<\Symfony\Component\Form\FormError> $errors */
@@ -84,11 +67,6 @@ class ReorderController extends AbstractController
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return void
-     */
     protected function handleCartReorderResponseErrors(CartReorderResponseTransfer $cartReorderResponseTransfer): void
     {
         foreach ($cartReorderResponseTransfer->getErrors() as $errorTransfer) {

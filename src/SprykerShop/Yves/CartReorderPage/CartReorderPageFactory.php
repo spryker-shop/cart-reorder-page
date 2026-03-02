@@ -23,17 +23,11 @@ use Symfony\Component\Form\FormInterface;
  */
 class CartReorderPageFactory extends AbstractFactory
 {
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getCartReorderForm(): FormInterface
     {
         return $this->getFormFactory()->create(CartReorderForm::class);
     }
 
-    /**
-     * @return \SprykerShop\Yves\CartReorderPage\Form\Handler\CartReorderHandlerInterface
-     */
     public function createCartReorderHandler(): CartReorderHandlerInterface
     {
         return new CartReorderHandler(
@@ -45,33 +39,21 @@ class CartReorderPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactory
-     */
     public function getFormFactory(): FormFactory
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
     }
 
-    /**
-     * @return \SprykerShop\Yves\CartReorderPage\Dependency\Client\CartReorderPageToCustomerClientInterface
-     */
     public function getCustomerClient(): CartReorderPageToCustomerClientInterface
     {
         return $this->getProvidedDependency(CartReorderPageDependencyProvider::CLIENT_CUSTOMER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\CartReorderPage\Dependency\Client\CartReorderPageToZedRequestClientInterface
-     */
     public function getZedRequestClient(): CartReorderPageToZedRequestClientInterface
     {
         return $this->getProvidedDependency(CartReorderPageDependencyProvider::CLIENT_ZED_REQUEST);
     }
 
-    /**
-     * @return \SprykerShop\Yves\CartReorderPage\Dependency\Client\CartReorderPageToCartReorderClientInterface
-     */
     public function getCartReorderClient(): CartReorderPageToCartReorderClientInterface
     {
         return $this->getProvidedDependency(CartReorderPageDependencyProvider::CLIENT_CART_REORDER);

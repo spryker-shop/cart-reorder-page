@@ -40,9 +40,6 @@ class CartReorderItemCheckboxWidget extends AbstractWidget
      */
     protected const ATTRIBUTE_NAME_SALES_ORDER_ITEM_IDS = 'sales-order-item-ids';
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     */
     public function __construct(ItemTransfer $itemTransfer)
     {
         $attributes = $this->executeCartReorderItemCheckboxAttributeExpanderPlugins(
@@ -56,57 +53,31 @@ class CartReorderItemCheckboxWidget extends AbstractWidget
         $this->addAttributeDisabledParameter($attributes[static::PARAMETER_ATTRIBUTE_DISABLED]);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CartReorderItemCheckboxWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@CartReorderPage/views/cart-reorder-item-checkbox/cart-reorder-item-checkbox.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return void
-     */
     protected function addItemParameter(ItemTransfer $itemTransfer): void
     {
         $this->addParameter(static::PARAMETER_ITEM, $itemTransfer);
     }
 
-    /**
-     * @param string $attributeName
-     *
-     * @return void
-     */
     protected function addAttributeNameParameter(string $attributeName): void
     {
         $this->addParameter(static::PARAMETER_ATTRIBUTE_NAME, $attributeName);
     }
 
-    /**
-     * @param string $value
-     *
-     * @return void
-     */
     protected function addAttributeValueParameter(string $value): void
     {
         $this->addParameter(static::PARAMETER_ATTRIBUTE_VALUE, $value);
     }
 
-    /**
-     * @param bool $disabled
-     *
-     * @return void
-     */
     protected function addAttributeDisabledParameter(bool $disabled): void
     {
         $this->addParameter(static::PARAMETER_ATTRIBUTE_DISABLED, $disabled);

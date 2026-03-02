@@ -12,11 +12,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface CartReorderHandlerInterface
 {
-    /**
-     * @param string $orderReference
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function reorder(string $orderReference, Request $request): CartReorderResponseTransfer;
 }

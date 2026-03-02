@@ -52,35 +52,21 @@ class CartReorderItemsWidget extends AbstractWidget
         $this->addOrderShipmentExpensesParameter($orderShipmentExpenses);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CartReorderItemsWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@CartReorderPage/views/cart-reorder-items/cart-reorder-items.twig';
     }
 
-    /**
-     * @return void
-     */
     protected function addFormParameter(): void
     {
         $this->addParameter(static::PARAMETER_FORM, $this->getFactory()->getCartReorderForm()->createView());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     protected function addOrderParameter(OrderTransfer $orderTransfer): void
     {
         $this->addParameter(static::PARAMETER_ORDER, $orderTransfer);

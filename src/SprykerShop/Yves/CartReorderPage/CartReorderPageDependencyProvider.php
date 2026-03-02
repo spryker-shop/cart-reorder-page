@@ -40,11 +40,6 @@ class CartReorderPageDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const PLUGINS_CART_REORDER_REQUEST_EXPANDER = 'PLUGINS_CART_REORDER_REQUEST_EXPANDER';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -57,11 +52,6 @@ class CartReorderPageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCustomerClient(Container $container): Container
     {
         $container->set(static::CLIENT_CUSTOMER, function (Container $container) {
@@ -73,11 +63,6 @@ class CartReorderPageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addZedRequestClient(Container $container): Container
     {
         $container->set(static::CLIENT_ZED_REQUEST, function (Container $container) {
@@ -89,11 +74,6 @@ class CartReorderPageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCartReorderClient(Container $container): Container
     {
         $container->set(static::CLIENT_CART_REORDER, function (Container $container) {
@@ -105,11 +85,6 @@ class CartReorderPageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCartReorderItemCheckboxAttributeExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_ITEM_CHECKBOX_ATTRIBUTE_EXPANDER, function () {
@@ -127,11 +102,6 @@ class CartReorderPageDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCartReorderRequestExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_REQUEST_EXPANDER, function () {

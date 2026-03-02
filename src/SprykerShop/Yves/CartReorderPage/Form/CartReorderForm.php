@@ -17,9 +17,6 @@ class CartReorderForm extends AbstractType
      */
     public const FORM_NAME = 'cartReorderForm';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::FORM_NAME;

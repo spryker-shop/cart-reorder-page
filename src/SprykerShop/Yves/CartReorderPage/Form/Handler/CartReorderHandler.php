@@ -40,12 +40,6 @@ class CartReorderHandler implements CartReorderHandlerInterface
     ) {
     }
 
-    /**
-     * @param string $orderReference
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function reorder(string $orderReference, Request $request): CartReorderResponseTransfer
     {
         /** @var \Generated\Shared\Transfer\CustomerTransfer $customerTransfer */
@@ -67,12 +61,6 @@ class CartReorderHandler implements CartReorderHandlerInterface
         return $cartReorderResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\CartReorderRequestTransfer
-     */
     protected function executeCartReorderRequestExpanderPlugins(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         Request $request

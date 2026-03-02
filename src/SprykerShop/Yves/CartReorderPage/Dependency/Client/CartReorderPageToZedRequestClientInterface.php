@@ -9,8 +9,5 @@ namespace SprykerShop\Yves\CartReorderPage\Dependency\Client;
 
 interface CartReorderPageToZedRequestClientInterface
 {
-    /**
-     * @return void
-     */
     public function addResponseMessagesToMessenger(): void;
 }

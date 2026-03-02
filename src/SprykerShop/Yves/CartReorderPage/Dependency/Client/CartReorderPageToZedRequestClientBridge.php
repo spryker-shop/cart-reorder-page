@@ -22,9 +22,6 @@ class CartReorderPageToZedRequestClientBridge implements CartReorderPageToZedReq
         $this->zedRequestClient = $zedRequestClient;
     }
 
-    /**
-     * @return void
-     */
     public function addResponseMessagesToMessenger(): void
     {
         $this->zedRequestClient->addResponseMessagesToMessenger();
