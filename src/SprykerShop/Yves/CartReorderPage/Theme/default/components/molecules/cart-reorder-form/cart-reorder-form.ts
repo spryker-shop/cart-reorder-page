@@ -11,7 +11,6 @@ export default class CartReorderForm extends Component {
         this.trigger = this.querySelector<HTMLElement>(`.${this.jsName}__trigger`);
     }
 
-    protected readyCallback(): void {}
     protected init(): void {
         this.selections.forEach((selection: HTMLInputElement) =>
             selection.addEventListener('change', () => this.onSelectionChange()),
