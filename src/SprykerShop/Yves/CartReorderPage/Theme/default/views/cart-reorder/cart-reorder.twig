@@ -12,7 +12,7 @@
     {% if data.buttonClass == 'button' %}
         {{ form_start(data.form, {'action': path('cart-reorder', {'orderReference': data.order.orderReference})}) }}
             {% block embeddedData %}
-                <button class="button">{{ 'cart_reorder_page.reorder_all' | trans }}</button>
+                <button class="button js-cart-reorder-all">{{ 'cart_reorder_page.reorder_all' | trans }}</button>
             {% endblock %}
         {{ form_end(data.form) }}
     {% endif %}
